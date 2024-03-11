@@ -4,10 +4,14 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.CommonUtils;
 
 public class DriverFactory {
@@ -16,9 +20,20 @@ public class DriverFactory {
 	
 	public static WebDriver initializeBrowser(String browserName) {
 		
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		
+		DesiredCapabilities cp=new DesiredCapabilities();
+		cp.setCapability(ChromeOptions.CAPABILITY, options);
+        options.merge(cp);
+		
+		
 		if(browserName.equals("chrome")) {
 			
-			driver = new ChromeDriver();
+			
+			
+			driver = new ChromeDriver(options);
 			
 		}else if(browserName.equals("firefox")) {
 			
