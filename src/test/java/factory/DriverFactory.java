@@ -11,7 +11,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.CommonUtils;
 
 public class DriverFactory {
@@ -21,6 +20,7 @@ public class DriverFactory {
 	public static WebDriver initializeBrowser(String browserName) {
 		
 		
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");  
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		
