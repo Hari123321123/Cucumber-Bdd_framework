@@ -1,4 +1,4 @@
-@exe
+
 Feature: Login functionality
 
 Scenario Outline: Login with valid credentials
@@ -11,7 +11,7 @@ Examples:
 |username								|password	|
 |chaudharishubham61@gmail.com	|qazEDC		|
 
-@tsp
+
 Scenario: Login with invalid credentials
 Given User navigates to login page
 When User enters invalid email address into email field
