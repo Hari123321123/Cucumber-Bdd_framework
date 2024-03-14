@@ -27,7 +27,7 @@ public class Login {
 		HomePage homePage = new HomePage(driver);
 		homePage.clickOnMyAccount();
 		loginPage = homePage.selectLoginOption();
-		
+	
 	}
 	
 	

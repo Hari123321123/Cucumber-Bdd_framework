@@ -19,9 +19,12 @@ public class MyHooks {
 	@Before
 	public void setup() {
 		
+	
+		
 		Properties prop = new ConfigReader().intializeProperties();
 		driver = DriverFactory.initializeBrowser(prop.getProperty("browser"));
-		driver.get(prop.getProperty("url"));
+		driver.get(prop.getProperty("url"));int s =prop.size();
+		System.out.println(s); 
 		
 	}
 	
